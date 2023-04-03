@@ -1,0 +1,14 @@
+src_dir="~/Commons/Career/Uni/assignments/WeebDev/portfolio/portfolio-src"
+deploy_dir="~/Commons/Career/Uni/assignments/WeebDev/portfolio/deploy"
+
+echo "cleaning up the existing dir"
+rm -r *
+echo "building flutter web app"
+cd $src_dir
+flutter build web --release --web-renderer html --base-href /portfolio/
+echo "built web app"
+cp -r build/web/* $deploy_dir
+echo "commiting to github"
+git add .
+git commit -am "Automated commit"
+git push
