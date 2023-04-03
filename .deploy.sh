@@ -7,7 +7,7 @@ cd $src_dir;
 pwd;
 flutter build web --release --web-renderer html --base-href /portfolio/;
 echo "copying built files";
-cp -r $scr_dir/build/web/* $deploy_dir;
+cp -r $src_dir/build/web/* $deploy_dir;
 cd $deploy_dir;
 pwd;
 echo "commiting to github";
